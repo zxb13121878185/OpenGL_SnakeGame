@@ -6,18 +6,18 @@
 
 
 
-class Material
+class ResManage
 {
 public:
 	std::map<std::string, Shader> MapShaders;
 	void LoadShader(std::string name, const char* vsFile, const char* fsFile, const char* gsFile = nullptr);
 
 public:
-	static Material* Instance();
-	~Material();
+	static ResManage* Instance();
+	~ResManage();
 
 private:
-	static Material* _instance;
-	Material() {}
+	static ResManage* _instance;
+	ResManage() {}
 };
 

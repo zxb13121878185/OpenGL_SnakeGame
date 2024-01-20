@@ -1,11 +1,11 @@
-#include "Material.h"
+#include "ResManage.h"
 #include <iostream>
 #include <sstream>
 #include <fstream>
 //#define STB_IMAGE_IMPLEMENTATION
 //#include "stb_image.h"
 
-void Material::LoadShader(std::string name, const char* vsFile, const char* fsFile, const char* gsFile)
+void ResManage::LoadShader(std::string name, const char* vsFile, const char* fsFile, const char* gsFile)
 {
 	// 1. retrieve the vertex/fragment source code from filePath
 	std::string vertexCode;
@@ -49,15 +49,15 @@ void Material::LoadShader(std::string name, const char* vsFile, const char* fsFi
 	MapShaders[name] = shader;	//添加到字典中
 }
 
-Material* Material::_instance = nullptr;//一定要先初始化为空，否则会编译报错,头文件只是声明，不是定义
-Material* Material::Instance()
+ResManage* ResManage::_instance = nullptr;//一定要先初始化为空，否则会编译报错,头文件只是声明，不是定义
+ResManage* ResManage::Instance()
 {
 	if (NULL == _instance)
-		_instance = new Material();
+		_instance = new ResManage();
 	return _instance;
 }
 
-Material::~Material()
+ResManage::~ResManage()
 {
 	//不能在析构函数中调用释放单例变量，会无限循环调用析构函数
 	//不过本身这个代码也不会被调用

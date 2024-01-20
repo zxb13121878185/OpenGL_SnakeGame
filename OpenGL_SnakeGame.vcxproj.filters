@@ -21,7 +21,7 @@
     <ClCompile Include="Code\MainRun.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Material.cpp">
+    <ClCompile Include="Code\ResManage.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Code\Shader.cpp">
@@ -33,12 +33,15 @@
     <ClCompile Include="Code\SnakesObject.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Code\SpriteRender.cpp">
+    <ClCompile Include="Code\RenderCtr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteBaseObject.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Code\Material.h">
+    <ClInclude Include="Code\ResManage.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Code\Shader.h">
@@ -50,7 +53,10 @@
     <ClInclude Include="Code\SnakesObject.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Code\SpriteRender.h">
+    <ClInclude Include="Code\RenderCtr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteBaseObject.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

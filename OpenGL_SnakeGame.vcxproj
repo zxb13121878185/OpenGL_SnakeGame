@@ -136,19 +136,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Code\MainRun.cpp" />
-    <ClCompile Include="Code\Material.cpp" />
+    <ClCompile Include="Code\ResManage.cpp" />
     <ClCompile Include="Code\Shader.cpp" />
     <ClCompile Include="Code\SnakesBody.cpp" />
     <ClCompile Include="Code\SnakesObject.cpp" />
-    <ClCompile Include="Code\SpriteRender.cpp" />
+    <ClCompile Include="Code\RenderCtr.cpp" />
     <ClCompile Include="glad.c" />
+    <ClCompile Include="SpriteBaseObject.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Code\Material.h" />
+    <ClInclude Include="Code\ResManage.h" />
     <ClInclude Include="Code\Shader.h" />
     <ClInclude Include="Code\SnakesBody.h" />
     <ClInclude Include="Code\SnakesObject.h" />
-    <ClInclude Include="Code\SpriteRender.h" />
+    <ClInclude Include="Code\RenderCtr.h" />
+    <ClInclude Include="SpriteBaseObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

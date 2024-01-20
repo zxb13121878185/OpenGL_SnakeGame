@@ -5,7 +5,7 @@
 #include <stb_image.h>
 #include "SnakesObject.h"
 #include "Shader.h"
-#include "Material.h"
+#include "ResManage.h"
 
 unsigned int VBO;
 unsigned int VAO;
@@ -57,7 +57,7 @@ void SnakesObject::GetBodys()
 
 void SnakesObject::Draw()
 {
-	Shader* ourShader = &Material::Instance()->MapShaders["Snakes"];
+	Shader* ourShader = &ResManage::Instance()->MapShaders["Snakes"];
 	for (size_t i = 0; i < ListBodys.size(); i++)
 	{
 		ListBodys[i].Draw(ourShader, VAO);
@@ -65,9 +65,6 @@ void SnakesObject::Draw()
 }
 void SnakesObject::DrawInit(int screenWidth, int screenHeight)
 {
-	Material::Instance()->LoadShader("Snakes", "shader/texture.vs", "shader/texture.fs");
-
-	Shader* ourShader = &Material::Instance()->MapShaders["Snakes"];
 	// set up vertex data (and buffer(s)) and configure vertex attributes
 			// ------------------------------------------------------------------
 	float vertices[] = {
@@ -146,6 +143,9 @@ void SnakesObject::DrawInit(int screenWidth, int screenHeight)
 	}
 	stbi_image_free(data);
 
+
+	ResManage::Instance()->LoadShader("Snakes", "shader/texture.vs", "shader/texture.fs");
+	Shader* ourShader = &ResManage::Instance()->MapShaders["Snakes"];
 	// tell opengl for each sampler to which texture unit it belongs to (only has to be done once)
 	// -------------------------------------------------------------------------------------------
 	ourShader->Use(); // don't forget to activate/use the shader before setting uniforms!
