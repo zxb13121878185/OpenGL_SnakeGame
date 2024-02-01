@@ -1,5 +1,5 @@
 #pragma once
-#include "../SpriteBaseObject.h"
+#include "SpriteBaseObject.h"
 
 
 class RenderCtr

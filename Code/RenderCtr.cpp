@@ -47,7 +47,7 @@ void RenderCtr::Init()
 	glBindVertexArray(0);
 }
 
-static RenderCtr* _instance = nullptr;
+RenderCtr* RenderCtr::_instance = nullptr;
 RenderCtr* RenderCtr::Instance()
 {
 	if (nullptr == _instance)

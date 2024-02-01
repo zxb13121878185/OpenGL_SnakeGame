@@ -36,7 +36,7 @@
     <ClCompile Include="Code\RenderCtr.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteBaseObject.cpp">
+    <ClCompile Include="Code\SpriteBaseObject.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,7 +56,7 @@
     <ClInclude Include="Code\RenderCtr.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteBaseObject.h">
+    <ClInclude Include="Code\SpriteBaseObject.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

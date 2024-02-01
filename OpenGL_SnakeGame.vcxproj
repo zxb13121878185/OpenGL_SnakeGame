@@ -72,9 +72,9 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LibraryPath>E:\OpenGL\Environment\libs;$(LibraryPath)</LibraryPath>
+    <LibraryPath>E:\XRResearch\CG\OpenGL\Environment\lib;$(LibraryPath)</LibraryPath>
     <ExternalIncludePath>$(ExternalIncludePath)</ExternalIncludePath>
-    <IncludePath>E:\OpenGL\Environment\includes;$(IncludePath)</IncludePath>
+    <IncludePath>E:\XRResearch\CG\OpenGL\Environment\includes;$(IncludePath)</IncludePath>
     <ReferencePath>$(ReferencePath)</ReferencePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -141,8 +141,8 @@
     <ClCompile Include="Code\SnakesBody.cpp" />
     <ClCompile Include="Code\SnakesObject.cpp" />
     <ClCompile Include="Code\RenderCtr.cpp" />
+    <ClCompile Include="Code\SpriteBaseObject.cpp" />
     <ClCompile Include="glad.c" />
-    <ClCompile Include="SpriteBaseObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\ResManage.h" />
@@ -150,7 +150,7 @@
     <ClInclude Include="Code\SnakesBody.h" />
     <ClInclude Include="Code\SnakesObject.h" />
     <ClInclude Include="Code\RenderCtr.h" />
-    <ClInclude Include="SpriteBaseObject.h" />
+    <ClInclude Include="Code\SpriteBaseObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

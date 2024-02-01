@@ -1,9 +1,9 @@
 #pragma once
-#include "Code/Shader.h"
+#include "Shader.h"
 class SpriteBaseObject
 {
 public:
-	SpriteBaseObject(Shader * shader,unsigned int tex1,unsigned,int tex2);
+	SpriteBaseObject(Shader* shader, unsigned int tex1, unsigned, int tex2);
 	~SpriteBaseObject();
 
 private:
