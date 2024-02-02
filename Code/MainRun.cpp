@@ -21,7 +21,6 @@ const unsigned int SCREEN_HEIGHT = 1080;
 glm::vec2 BodySize = glm::vec2(50.0f, 50.0f);
 glm::vec2 StartPos = glm::vec2(0);
 float Velocity = 1.0f;
-SnakesObject* snakesObject;
 
 int main(int argc, char* argv[])
 {
@@ -49,8 +48,6 @@ int main(int argc, char* argv[])
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 
-	SnakesObject::DrawInit(SCREEN_WIDTH, SCREEN_HEIGHT);
-	snakesObject = new SnakesObject(StartPos, Velocity, BodySize);
 
 
 	float lastFrame = 0;
@@ -72,14 +69,11 @@ int main(int argc, char* argv[])
 		glClear(GL_COLOR_BUFFER_BIT);
 
 
-		snakesObject->Draw();
-		snakesObject->Move(deltaTime);
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
 
-	delete(snakesObject);
 
 	glfwTerminate();
 	return 0;
@@ -104,24 +98,24 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 
 	if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
 	{
-		snakesObject->Add();
+		//snakesObject->Add();
 	}
 
 	if (key == GLFW_KEY_W && action == GLFW_PRESS)
 	{
-		snakesObject->ChangeDir(MoveDir::Up);
+		//snakesObject->ChangeDir(MoveDir::Up);
 	}
 	if (key == GLFW_KEY_S && action == GLFW_PRESS)
 	{
-		snakesObject->ChangeDir(MoveDir::Down);
+		//snakesObject->ChangeDir(MoveDir::Down);
 	}
 	if (key == GLFW_KEY_A && action == GLFW_PRESS)
 	{
-		snakesObject->ChangeDir(MoveDir::Left);
+		//snakesObject->ChangeDir(MoveDir::Left);
 	}
 	if (key == GLFW_KEY_D && action == GLFW_PRESS)
 	{
-		snakesObject->ChangeDir(MoveDir::Right);
+		//snakesObject->ChangeDir(MoveDir::Right);
 	}
 }
 

@@ -136,21 +136,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Code\MainRun.cpp" />
-    <ClCompile Include="Code\ResManage.cpp" />
-    <ClCompile Include="Code\Shader.cpp" />
     <ClCompile Include="Code\SnakesBody.cpp" />
     <ClCompile Include="Code\SnakesObject.cpp" />
-    <ClCompile Include="Code\RenderCtr.cpp" />
-    <ClCompile Include="Code\SpriteBaseObject.cpp" />
+    <ClCompile Include="Code\texture.cpp" />
+    <ClCompile Include="game_object.cpp" />
     <ClCompile Include="glad.c" />
+    <ClCompile Include="resource_manager.cpp" />
+    <ClCompile Include="shader.cpp" />
+    <ClCompile Include="sprite_renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Code\ResManage.h" />
-    <ClInclude Include="Code\Shader.h" />
+    <ClInclude Include="Code\game_object.h" />
     <ClInclude Include="Code\SnakesBody.h" />
     <ClInclude Include="Code\SnakesObject.h" />
-    <ClInclude Include="Code\RenderCtr.h" />
-    <ClInclude Include="Code\SpriteBaseObject.h" />
+    <ClInclude Include="Code\sprite_renderer.h" />
+    <ClInclude Include="Code\texture.h" />
+    <ClInclude Include="resource_manager.h" />
+    <ClInclude Include="shader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

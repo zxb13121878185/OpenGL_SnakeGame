@@ -29,7 +29,6 @@ public:
 
 public:
 	static 	glm::vec2 GetDirVec(MoveDir dir);
-	static void DrawInit(int screenWidth, int screenHeight);
 
 private:
 	std::vector <SnakesBody> ListBodys;
