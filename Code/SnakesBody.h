@@ -9,6 +9,8 @@
 #include <iostream>
 #include <map>
 #include "Shader.h"
+#include "sprite_renderer.h"
+using namespace glm;
 
 enum MoveDir
 {
@@ -24,6 +26,7 @@ public:
 	~SnakesBody();
 	void Draw(Shader* ourShader, unsigned int VAO);
 	void Move();
+	void Draw(SpriteRenderer& renderer);
 public:
 	glm::vec2 Position;
 	glm::vec2 Size;

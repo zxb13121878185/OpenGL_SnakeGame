@@ -1,11 +1,8 @@
 #include "SnakesBody.h"
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#define STB_IMAGE_IMPLEMENTATION
-#include <stb_image.h>
 #include "SnakesObject.h"
 #include "Shader.h"
-#include "ResManager.h"
 
 unsigned int VBO;
 unsigned int VAO;
@@ -57,11 +54,7 @@ void SnakesObject::GetBodys()
 
 void SnakesObject::Draw()
 {
-	Shader* ourShader = &ResManager::Instance()->MapShaders["Snakes"];
-	for (size_t i = 0; i < ListBodys.size(); i++)
-	{
-		ListBodys[i].Draw(ourShader, VAO);
-	}
+
 }
 
 float TimeCounter;

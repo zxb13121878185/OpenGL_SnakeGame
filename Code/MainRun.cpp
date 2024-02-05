@@ -6,7 +6,7 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include <iostream>
-#include "SnakesObject.h"
+#include "game.h"
 
 
 
@@ -21,6 +21,8 @@ const unsigned int SCREEN_HEIGHT = 1080;
 glm::vec2 BodySize = glm::vec2(50.0f, 50.0f);
 glm::vec2 StartPos = glm::vec2(0);
 float Velocity = 1.0f;
+
+Game* SnakeGame;
 
 int main(int argc, char* argv[])
 {
@@ -47,8 +49,8 @@ int main(int argc, char* argv[])
 	glfwSetKeyCallback(window, key_callback);
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-
-
+	SnakeGame = new Game(SCREEN_WIDTH, SCREEN_HEIGHT);
+	SnakeGame->Init();
 
 	float lastFrame = 0;
 	float deltaTime = 0;
@@ -68,13 +70,13 @@ int main(int argc, char* argv[])
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-
+		SnakeGame->Render();
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
 
-
+	delete(SnakeGame);
 	glfwTerminate();
 	return 0;
 }

@@ -49,3 +49,8 @@ void SnakesBody::Move()
 	Position += tempDir * Size.x;
 }
 
+void SnakesBody::Draw(SpriteRenderer& renderer)
+{
+
+}
+

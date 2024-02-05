@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -135,24 +135,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Code\game.cpp" />
+    <ClCompile Include="Code\game_object.cpp" />
     <ClCompile Include="Code\MainRun.cpp" />
+    <ClCompile Include="Code\resource_manager.cpp" />
+    <ClCompile Include="Code\shader.cpp" />
     <ClCompile Include="Code\SnakesBody.cpp" />
     <ClCompile Include="Code\SnakesObject.cpp" />
+    <ClCompile Include="Code\snakes_object.cpp" />
+    <ClCompile Include="Code\sprite_renderer.cpp" />
     <ClCompile Include="Code\texture.cpp" />
-    <ClCompile Include="game_object.cpp" />
     <ClCompile Include="glad.c" />
-    <ClCompile Include="resource_manager.cpp" />
-    <ClCompile Include="shader.cpp" />
-    <ClCompile Include="sprite_renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Code\game.h" />
     <ClInclude Include="Code\game_object.h" />
+    <ClInclude Include="Code\resource_manager.h" />
+    <ClInclude Include="Code\shader.h" />
     <ClInclude Include="Code\SnakesBody.h" />
     <ClInclude Include="Code\SnakesObject.h" />
+    <ClInclude Include="Code\snakes_object.h" />
     <ClInclude Include="Code\sprite_renderer.h" />
     <ClInclude Include="Code\texture.h" />
-    <ClInclude Include="resource_manager.h" />
-    <ClInclude Include="shader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
