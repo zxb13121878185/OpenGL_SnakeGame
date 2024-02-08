@@ -136,25 +136,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Code\game.cpp" />
-    <ClCompile Include="Code\game_object.cpp" />
     <ClCompile Include="Code\MainRun.cpp" />
     <ClCompile Include="Code\resource_manager.cpp" />
     <ClCompile Include="Code\shader.cpp" />
-    <ClCompile Include="Code\SnakesBody.cpp" />
-    <ClCompile Include="Code\SnakesObject.cpp" />
-    <ClCompile Include="Code\snakes_object.cpp" />
+    <ClCompile Include="Code\snake_body.cpp" />
+    <ClCompile Include="Code\snake_object.cpp" />
     <ClCompile Include="Code\sprite_renderer.cpp" />
     <ClCompile Include="Code\texture.cpp" />
     <ClCompile Include="glad.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\game.h" />
-    <ClInclude Include="Code\game_object.h" />
     <ClInclude Include="Code\resource_manager.h" />
     <ClInclude Include="Code\shader.h" />
-    <ClInclude Include="Code\SnakesBody.h" />
-    <ClInclude Include="Code\SnakesObject.h" />
-    <ClInclude Include="Code\snakes_object.h" />
+    <ClInclude Include="Code\snake_body.h" />
+    <ClInclude Include="Code\snake_object.h" />
     <ClInclude Include="Code\sprite_renderer.h" />
     <ClInclude Include="Code\texture.h" />
   </ItemGroup>

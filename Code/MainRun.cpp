@@ -18,10 +18,6 @@ const unsigned int SCREEN_WIDTH = 1920;
 // The height of the screen
 const unsigned int SCREEN_HEIGHT = 1080;
 
-glm::vec2 BodySize = glm::vec2(50.0f, 50.0f);
-glm::vec2 StartPos = glm::vec2(0);
-float Velocity = 1.0f;
-
 Game* SnakeGame;
 
 int main(int argc, char* argv[])
@@ -63,8 +59,10 @@ int main(int argc, char* argv[])
 		float currentFrame = glfwGetTime();
 		deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
-
 		glfwPollEvents();
+
+		SnakeGame->ProcessInput(deltaTime);
+		SnakeGame->Update(deltaTime);
 		// render
 		// ------
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -73,7 +71,6 @@ int main(int argc, char* argv[])
 		SnakeGame->Render();
 
 		glfwSwapBuffers(window);
-		glfwPollEvents();
 	}
 
 	delete(SnakeGame);
@@ -90,34 +87,12 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 	{
 		if (action == GLFW_PRESS)
 		{
-			//std::cout << "Press" << std::endl;
+			SnakeGame->Keys[key] = true;
 		}
 		else if (action == GLFW_RELEASE)
 		{
-			//std::cout << "Release" << std::endl;
+			SnakeGame->Keys[key] = false;
 		}
-	}
-
-	if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
-	{
-		//snakesObject->Add();
-	}
-
-	if (key == GLFW_KEY_W && action == GLFW_PRESS)
-	{
-		//snakesObject->ChangeDir(MoveDir::Up);
-	}
-	if (key == GLFW_KEY_S && action == GLFW_PRESS)
-	{
-		//snakesObject->ChangeDir(MoveDir::Down);
-	}
-	if (key == GLFW_KEY_A && action == GLFW_PRESS)
-	{
-		//snakesObject->ChangeDir(MoveDir::Left);
-	}
-	if (key == GLFW_KEY_D && action == GLFW_PRESS)
-	{
-		//snakesObject->ChangeDir(MoveDir::Right);
 	}
 }
 

@@ -19,20 +19,19 @@ enum MoveDir
 	Left,
 	Right,
 };
-class SnakesBody
+class SnakeBody
 {
 public:
-	SnakesBody(glm::vec2 pos, float velocity, glm::vec2 size, unsigned int tex1, unsigned int tex2 = 0);
-	~SnakesBody();
-	void Draw(Shader* ourShader, unsigned int VAO);
+	SnakeBody(vec2 pos, float velocity, vec2 size, Texture2D tex);
+	~SnakeBody();
 	void Move();
 	void Draw(SpriteRenderer& renderer);
 public:
-	glm::vec2 Position;
-	glm::vec2 Size;
-	float SpritMoveVelocity;
+	vec2 Position, Size;
+	float Velocity;
+	float Rotation;
+	vec3 Color;
 	MoveDir Direction;
-private:
-	unsigned int texrure1, texture2;
+	Texture2D Texture;
 };
 

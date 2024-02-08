@@ -21,19 +21,16 @@
     <ClCompile Include="Code\MainRun.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Code\SnakesBody.cpp">
+    <ClCompile Include="Code\snake_body.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Code\SnakesObject.cpp">
+    <ClCompile Include="Code\snake_object.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Code\texture.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Code\game.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Code\game_object.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Code\shader.cpp">
@@ -45,24 +42,18 @@
     <ClCompile Include="Code\resource_manager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Code\snakes_object.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Code\SnakesBody.h">
+    <ClInclude Include="Code\snake_body.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Code\SnakesObject.h">
+    <ClInclude Include="Code\snake_object.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Code\texture.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Code\sprite_renderer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Code\game_object.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Code\game.h">
@@ -72,9 +63,6 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Code\resource_manager.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Code\snakes_object.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

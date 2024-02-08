@@ -7,11 +7,16 @@ using namespace irrklang;
 
 #include "resource_manager.h"
 #include "sprite_renderer.h"
+#include "snake_object.h"
 
 using namespace glm;
 
-SpriteRenderer* Renderer;
+glm::vec2 BodySize = glm::vec2(50.0f, 50.0f);
+glm::vec2 StartPos = glm::vec2(0);
+float Velocity = 1.0f;
 
+SpriteRenderer* TexRenderer;
+SnakeObject* Snake;
 
 Game::Game(unsigned int width, unsigned int height)
 	:Width(width), Height(height)
@@ -33,21 +38,25 @@ void Game::Init()
 	ResourceManager::Instance()->LoadTexture("resources/textures/awesomeface.png", true, "snakeHeader");
 	ResourceManager::Instance()->LoadTexture("resources/textures/block.png", false, "snakeBody");
 
-	Renderer = new SpriteRenderer(ResourceManager::Instance()->GetShader("sprite"));
-
+	TexRenderer = new SpriteRenderer(ResourceManager::Instance()->GetShader("sprite"));
+	Snake = new SnakeObject(StartPos, Velocity, BodySize, ResourceManager::Instance()->GetTexture("snakeHeader"),
+		ResourceManager::Instance()->GetTexture("snakeBody"));
 }
 
 void Game::ProcessInput(float dt)
 {
+	if(Keys[GLFW_KEY_SPACE])
 }
 
 void Game::Update(float dt)
 {
+
 }
 
 void Game::Render()
 {
-	Renderer->DrawSprite(ResourceManager::Instance()->GetTexture("background"), vec2(0), vec2(this->Width, this->Height), 0);
+	TexRenderer->DrawSprite(ResourceManager::Instance()->GetTexture("background"), vec2(0), vec2(this->Width, this->Height), 0);
+	Snake->Draw(*TexRenderer);
 }
 
 void Game::DoCollisions()

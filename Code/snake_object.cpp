@@ -1,15 +1,9 @@
-#include "SnakesBody.h"
+#include "snake_body.h"
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include "SnakesObject.h"
+#include "snake_object.h"
 #include "Shader.h"
 
-unsigned int VBO;
-unsigned int VAO;
-unsigned int EBO;
-unsigned int texture1;
-unsigned int texture2;
-glm::mat4 projection;
 
 struct DirChangePoint
 {
@@ -19,46 +13,45 @@ struct DirChangePoint
 
 std::vector<DirChangePoint> ListDirChangePoint;
 
-SnakesObject::SnakesObject(glm::vec2 startPos, float velocity, glm::vec2 size)
-	:Velocity(velocity)
+SnakeObject::SnakeObject(vec2 startPos, float velocity, vec2 size, Texture2D texHeader, Texture2D texBody)
+	:StartPosition(startPos), Velocity(velocity), Size(size), TextureHeader(TextureHeader), TextureBody(texBody)
 {
 	//创建第一个身体,作为头
-	SnakesBody tempBody(startPos, velocity, size, texture2);
+	SnakeBody tempBody(startPos, velocity, size, texHeader);
 	ListBodys.push_back(tempBody);
 }
 
-SnakesObject::~SnakesObject()
+SnakeObject::~SnakeObject()
 {
-	glDeleteVertexArrays(1, &VAO);
-	glDeleteBuffers(1, &VBO);
-	glDeleteBuffers(1, &EBO);
-
 	//delete Material::Instance();
 }
 
-void SnakesObject::Add()
+void SnakeObject::Add()
 {
 	//在尾部添加一个新的
-	SnakesBody* tempBody = &ListBodys.back();
-	glm::vec2 tempDir = SnakesObject::GetDirVec(tempBody->Direction);
-	glm::vec2 tempPos = tempBody->Position - tempDir * tempBody->Size.x;
-	SnakesBody* newBody = new SnakesBody(tempPos, Velocity, tempBody->Size, texture1);
+	SnakeBody* tempBody = &ListBodys.back();
+	glm::vec2 tempDir = SnakeObject::GetDirVec(tempBody->Direction);
+	glm::vec2 tempPos = tempBody->Position - tempDir * Size.x;
+	SnakeBody* newBody = new SnakeBody(tempPos, Velocity, Size, TextureBody);
 	ListBodys.push_back(*newBody);
 
 }
 
-void SnakesObject::GetBodys()
+void SnakeObject::GetBodys()
 {
 
 }
 
-void SnakesObject::Draw()
+void SnakeObject::Draw(SpriteRenderer& renderer)
 {
-
+	for (size_t i = 0; i < ListBodys.size(); i++)
+	{
+		ListBodys[i].Draw(renderer);
+	}
 }
 
 float TimeCounter;
-void SnakesObject::Move(float dt)
+void SnakeObject::Move(float dt)
 {
 	TimeCounter += dt;
 	if (TimeCounter < 1) return;
@@ -67,7 +60,7 @@ void SnakesObject::Move(float dt)
 	//往方向移动一步
 	for (size_t i = 0; i < ListBodys.size(); i++)
 	{
-		SnakesBody* tempBody = &ListBodys[i];
+		SnakeBody* tempBody = &ListBodys[i];
 		for (int j = 0; j < ListDirChangePoint.size(); j++)
 		{
 			DirChangePoint* tempPoint = &ListDirChangePoint[j];
@@ -88,7 +81,7 @@ void SnakesObject::Move(float dt)
 	}
 }
 
-void SnakesObject::ChangeDir(MoveDir dir)
+void SnakeObject::ChangeDir(MoveDir dir)
 {
 	DirChangePoint tempDCP;
 	tempDCP.Dir = dir;
@@ -96,7 +89,7 @@ void SnakesObject::ChangeDir(MoveDir dir)
 	ListDirChangePoint.push_back(tempDCP);
 }
 
-glm::vec2 SnakesObject::GetDirVec(MoveDir dir)
+glm::vec2 SnakeObject::GetDirVec(MoveDir dir)
 {
 	glm::vec2 tempDir = glm::vec2(0);
 
