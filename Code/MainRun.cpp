@@ -62,7 +62,6 @@ int main(int argc, char* argv[])
 		lastFrame = currentFrame;
 		glfwPollEvents();
 
-		SnakeGame->ProcessInput(deltaTime);
 		SnakeGame->Update(deltaTime);
 		// render
 		// ------

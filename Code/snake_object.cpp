@@ -33,6 +33,7 @@ void SnakeObject::Add()
 	glm::vec2 tempDir = SnakeObject::GetDirVec(tempBody->Direction);
 	glm::vec2 tempPos = tempBody->Position - tempDir * Size.x;
 	SnakeBody* newBody = new SnakeBody(tempPos, Velocity, Size, TextureBody);
+	newBody->Direction = tempBody->Direction;
 	ListBodys.push_back(*newBody);
 
 }
@@ -83,6 +84,24 @@ void SnakeObject::Move(float dt)
 
 void SnakeObject::ChangeDir(MoveDir dir)
 {
+	MoveDir tempCurDir = ListBodys.front().Direction;
+	//完全相反的方向不允许操作
+	switch (tempCurDir)
+	{
+	case Up:
+		if (dir == MoveDir::Down) return;
+		break;
+	case Down:
+		if (dir == MoveDir::Up) return;
+		break;
+	case Left:
+		if (dir == MoveDir::Right) return;
+		break;
+	case Right:
+		if (dir == MoveDir::Left) return;
+		break;
+	}
+
 	DirChangePoint tempDCP;
 	tempDCP.Dir = dir;
 	tempDCP.Pos = ListBodys.front().Position;

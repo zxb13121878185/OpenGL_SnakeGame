@@ -17,7 +17,6 @@ public:
 	~Game();
 
 	void Init();
-	void ProcessInput(float dt);
 	void GetKeyPress(int key);
 	void GetKeyRelease(int key);
 	void Update(float dt);

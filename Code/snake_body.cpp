@@ -8,7 +8,7 @@ using namespace std;
 SnakeBody::SnakeBody(vec2 pos, float velocity, vec2 size, Texture2D tex)
 	:Position(pos), Velocity(velocity), Size(size), Texture(tex), Rotation(0), Color(1.0f)
 {
-	Direction = MoveDir::Right;
+	Direction = MoveDir::Right;//Ä¬ÈÏ·½Ïò
 }
 
 SnakeBody::~SnakeBody()

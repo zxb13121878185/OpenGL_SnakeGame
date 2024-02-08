@@ -43,16 +43,28 @@ void Game::Init()
 		ResourceManager::Instance()->GetTexture("snakeBody"));
 }
 
-void Game::ProcessInput(float dt)
-{
-
-}
-
 void Game::GetKeyPress(int key)
 {
 	if (this->Keys[GLFW_KEY_SPACE])
 	{
 		//std::cout << "GetKeyPress" << std::endl;
+		Snake->Add();
+	}
+	if (Keys[GLFW_KEY_A] || Keys[GLFW_KEY_LEFT])
+	{
+		Snake->ChangeDir(MoveDir::Left);
+	}
+	if (Keys[GLFW_KEY_S] || Keys[GLFW_KEY_DOWN])
+	{
+		Snake->ChangeDir(MoveDir::Down);
+	}
+	if (Keys[GLFW_KEY_D] || Keys[GLFW_KEY_RIGHT])
+	{
+		Snake->ChangeDir(MoveDir::Right);
+	}
+	if (Keys[GLFW_KEY_W] || Keys[GLFW_KEY_UP])
+	{
+		Snake->ChangeDir(MoveDir::Up);
 	}
 }
 
@@ -66,7 +78,7 @@ void Game::GetKeyRelease(int key)
 
 void Game::Update(float dt)
 {
-
+	Snake->Move(dt);
 }
 
 void Game::Render()
