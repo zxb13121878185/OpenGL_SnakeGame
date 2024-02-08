@@ -13,6 +13,7 @@ class Shader
 {
 public:
 	unsigned int ID;
+	std::string Name;
 
 public:
 	Shader();
