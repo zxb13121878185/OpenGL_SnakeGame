@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include "game.h"
+#include "resource_manager.h"
 
 
 
@@ -88,14 +89,26 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 		if (action == GLFW_PRESS)
 		{
 			SnakeGame->Keys[key] = true;
+			//std::cout << "Press" << std::endl;
+			SnakeGame->GetKeyPress(key);
 		}
 		else if (action == GLFW_RELEASE)
 		{
+			//std::cout << "GLFW_RELEASE" << std::endl;
+			SnakeGame->GetKeyRelease(key);
 			SnakeGame->Keys[key] = false;
+		}
+		if (glfwGetKey(window, key) == GLFW_PRESS)
+		{
+			SnakeGame->KeysProcessed[key] = true;
+		}
+		if (glfwGetKey(window, key) == GLFW_RELEASE)
+		{
+			SnakeGame->KeysProcessed[key] = false;
+
 		}
 	}
 }
-
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
 	// make sure the viewport matches the new window dimensions; note that width and 

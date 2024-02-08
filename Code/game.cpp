@@ -19,7 +19,7 @@ SpriteRenderer* TexRenderer;
 SnakeObject* Snake;
 
 Game::Game(unsigned int width, unsigned int height)
-	:Width(width), Height(height)
+	:Width(width), Height(height), Keys(), KeysProcessed()
 {
 }
 
@@ -45,7 +45,23 @@ void Game::Init()
 
 void Game::ProcessInput(float dt)
 {
-	if(Keys[GLFW_KEY_SPACE])
+
+}
+
+void Game::GetKeyPress(int key)
+{
+	if (this->Keys[GLFW_KEY_SPACE])
+	{
+		//std::cout << "GetKeyPress" << std::endl;
+	}
+}
+
+void Game::GetKeyRelease(int key)
+{
+	if (this->Keys[GLFW_KEY_SPACE])
+	{
+		//std::cout << "GetKeyRelease" << std::endl;
+	}
 }
 
 void Game::Update(float dt)

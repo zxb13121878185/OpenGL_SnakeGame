@@ -111,6 +111,8 @@ void ResourceManager::Clear()
 
 ResourceManager::~ResourceManager()
 {
+	std::cout << "~ResourceManager()" << std::endl;
+	Clear();
 }
 
 ResourceManager::ResourceManager()
